@@ -10,5 +10,12 @@ export default factories.createCoreService('api::produit.produit', ({ strapi }) 
       var produit = await strapi.query('api::produit.produit').findOne({ barcode: ctx.params.barcode });
       return produit;
     },
+
+    async barcodeUpdate(ctx) {
+      var produit = await strapi.query('api::produit.produit').update({ where: { barcode: ctx.params.barcode },  data: ctx.request.body });
+      console.log(ctx.request.body);
+      console.log(produit);
+      return produit;
+    },
   };
 });

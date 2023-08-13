@@ -25,6 +25,11 @@ const myExtraRoutes = [
     path: "/produits/code/:barcode",
     handler: 'produit.barcode',
   },
+  {
+    method: "PUT",
+    path: "/produits/code/:barcode",
+    handler: 'produit.barcodeUpdate',
+  },
 ];
 
 module.exports = customRouter(coreRoutes, myExtraRoutes);

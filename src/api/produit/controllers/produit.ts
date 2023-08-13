@@ -10,6 +10,11 @@ export default factories.createCoreController('api::produit.produit', ({ strapi 
       const produit = strapi.services['api::produit.produit'].barcode(ctx);
       return produit;
     },
+
+    async barcodeUpdate(ctx: { params: { barcode: string; }; request: { body: any; }; }) {
+      const produit = strapi.services['api::produit.produit'].barcodeUpdate(ctx);
+      return produit;
+    }
   };
 }
 );
